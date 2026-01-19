@@ -1437,11 +1437,11 @@
       <div class="col-12 portfolio-item filter-remote filter-spatial">
         <div class="project-card">
           <div class="project-media">
-            <a href="assets/img/portfolio/swimmingpool1.jpg"
+            <a href="assets/img/portfolio/LULC.png"
                class="portfolio-lightbox"
                data-gallery="portfolioGallery"
                title="Sentinel-2 based land use land cover classification">
-              <img src="assets/img/portfolio/swimmingpool1.jpg"
+              <img src="assets/img/portfolio/LULC.png"
                    class="project-thumb"
                    alt="LULC Analysis">
             </a>
@@ -1463,13 +1463,13 @@
             <div class="project-actions mt-2">
               <button class="btn btn-sm btn-outline-primary project-summary-btn"
                       data-project-title="Land Use Land Cover Analysis of Western Development Region, Nepal"
-                      data-project-summary="Performed land use and land cover classification using Sentinel‑2 imagery to quantify the spatial distribution of major land-cover types in the Western Development Region of Nepal. Outputs support regional planning, environmental monitoring, and land management decisions.">
+                      data-project-summary="An eight‑class land‑use/land‑cover map at 10 m resolution was generated for Nepal’s Western Development Region using harmonized Sentinel‑2 Level‑2A data (COPERNICUS/S2_SR_HARMONIZED) from 1–30 April 2022. The image collection was filtered by region and CLOUDY_PIXEL_PERCENTAGE < 20%, then a QA60‑based mask removed cloud (bit 10) and cirrus (bit 11) before creating a median composite, which was enriched with terrain variables (elevation, slope, hillshade from NASADEM) and key indices: NDVI for vegetation, MNDWI for water, NDBI for built‑up areas, and NDSI for snow/ice. ESA WorldCover v100 was remapped from its original class codes to eight working classes [forest (4), shrubland (6), grassland (5), agriculture (1), built‑up (3), barren (2), snow/glacier (7), water (8)], and a stratified random sample of 2500 points was drawn to train a 100‑tree Random Forest classifier using spectral bands, indices and terrain as predictors. Post‑classification, a set of rule‑based corrections improved thematic accuracy: pixels with NDSI > 0.40 and elevation > 3000 m were assigned as snow/glacier (7), pixels labeled water (8) but on slopes > 10° were reassigned to barren (2), and pixels labeled water (8) but with MNDWI < 0.20 were reclassified as built‑up (3) to correct misclassified roads and airport surfaces.">
                 Summary
               </button>
 
               <button class="btn btn-sm btn-outline-secondary project-details-btn"
                       data-project-type="image"
-                      data-project-image="assets/img/portfolio/swimmingpool1.jpg">
+                      data-project-image="assets/img/portfolio/LULC.png">
                 Project Details
               </button>
             </div>
@@ -1525,11 +1525,11 @@
       <div class="col-12 portfolio-item filter-remote filter-spatial">
         <div class="project-card">
           <div class="project-media">
-            <a href="assets/img/portfolio/swimmingpool1.jpg"
+            <a href="assets/img/portfolio/Burn.png"
                class="portfolio-lightbox"
                data-gallery="portfolioGallery"
                title="Burned vs unburned area classification in Nepal">
-              <img src="assets/img/portfolio/swimmingpool1.jpg"
+              <img src="assets/img/portfolio/Burn.png"
                    class="project-thumb"
                    alt="Burned Area Mapping">
             </a>
@@ -1551,13 +1551,13 @@
             <div class="project-actions mt-2">
               <button class="btn btn-sm btn-outline-primary project-summary-btn"
                       data-project-title="Burned and Unburned Area Identification in Nepal"
-                      data-project-summary="Classified burned and unburned areas using Sentinel imagery to support post‑fire monitoring and recovery in Nepal. The maps highlight spatial patterns of fire-affected landscapes and areas requiring restoration or further management.">
+                      data-project-summary="A national‑scale burn severity map was produced for Nepal using Sentinel‑2 Level‑2A surface reflectance (COPERNICUS/S2_SR) over the official Nepal boundary. The workflow constructed cloud‑reduced median composites for a pre‑fire period (1–31 January 2022) and a post‑fire period (1 February–15 March 2022), after first masking the Scene Classification Layer (SCL) to retain only vegetation (4), bare soil (5), water (6) and unclassified (7), and scaling reflectance by dividing by 10,000. The Normalized Burn Ratio (NBR)-(B8−B12)/(B8+B12)(B8−B12)/(B8+B12) and Normalized Difference Water Index (NDWI) (B3−B8)/(B3+B8)(B3−B8)/(B3+B8) were then computed for both dates, and the differenced NBR (dNBR = NBRpre− NBRpost) was generated to capture fire‑related spectral change. To minimise false positives, dNBR was masked using (i) a water mask that removed pixels with NDWI ≥ 0 in the pre‑fire image, and (ii) topographic masks from SRTM DEM and derived slope that excluded high Himalaya (elevation ≥ 4000 m) and steep terrain (slope ≥ 45°). The corrected dNBR was finally reclassified into three burn‑severity classes using explicit thresholds—unburned (< 0.10), moderate (0.10–0.25) and severe (≥ 0.25.">
                 Summary
               </button>
 
               <button class="btn btn-sm btn-outline-secondary project-details-btn"
                       data-project-type="image"
-                      data-project-image="assets/img/portfolio/swimmingpool1.jpg">
+                      data-project-image="assets/img/portfolio/Burn.png">
                 Project Details
               </button>
             </div>
