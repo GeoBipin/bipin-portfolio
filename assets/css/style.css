@@ -90,7 +90,6 @@ h6 {
   0% {
     transform: rotate(0deg);
   }
-
   100% {
     transform: rotate(360deg);
   }
@@ -129,24 +128,23 @@ h6 {
 }
 
 @media (min-width: 991px) {
-  #main {
+  #main,
+  .quote-footer,
+  .github-notice {
     margin-left: 100px;
   }
 }
 
-/* Custom header nav labels */
 #header .nav-menu a {
   font-size: 15px;
   letter-spacing: 0.5px;
 }
 
-/* Make long labels wrap nicely on small screens */
 #header .nav-menu a span {
   white-space: normal;
   line-height: 1.3;
 }
 
-/* Optional: emphasize active link */
 #header .nav-menu .active {
   color: #ffffff;
 }
@@ -158,7 +156,6 @@ h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Desktop Navigation */
 .nav-menu {
   padding: 0;
   display: block;
@@ -308,7 +305,6 @@ h6 {
   z-index: 2;
 }
 
-/* Hero title and subtitle */
 #hero .hero-title {
   margin: 0;
   font-size: 3.4rem;
@@ -328,7 +324,6 @@ h6 {
   letter-spacing: 1px;
 }
 
-/* Specialization line (new — sits below typed text) */
 #hero .hero-specialization {
   color: #45505b;
   font-size: 1.15rem;
@@ -341,7 +336,6 @@ h6 {
   color: #0563bb;
 }
 
-/* Hero social links */
 #hero .social-links {
   margin-top: 30px;
 }
@@ -389,33 +383,6 @@ h6 {
   background: rgba(15, 23, 42, 0.9);
 }
 
-/* Hero stats row */
-.hero-stats-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  max-width: 760px;
-}
-
-.hero-stat {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 0.9rem;
-  border-radius: 0.8rem;
-  background: rgba(15, 23, 42, 0.7);
-  color: #e5e7eb;
-  font-size: 0.98rem;
-  border: 1px solid rgba(148, 163, 184, 0.4);
-  backdrop-filter: blur(6px);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-}
-
-.hero-stat:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.4);
-  background: rgba(15, 23, 42, 0.92);
-}
-
 /* Hero education card (glass) */
 .hero-education-card {
   background: rgba(0, 0, 0, 0.38);
@@ -433,7 +400,6 @@ h6 {
   border-color: rgba(125, 211, 252, 0.9);
 }
 
-/* Education items */
 .hero-edu-item {
   display: flex;
   align-items: flex-start;
@@ -445,14 +411,12 @@ h6 {
   padding-top: 12px;
 }
 
-/* Larger icons */
 .hero-edu-icon {
   font-size: 2.1rem;
   margin-right: 12px;
   margin-top: 3px;
 }
 
-/* Education text */
 .hero-edu-degree {
   font-size: 1.2rem;
   font-weight: 700;
@@ -479,10 +443,7 @@ h6 {
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 8px 18px rgba(46, 204, 113, 0.45);
-  transition:
-    transform 0.18s ease,
-    box-shadow 0.18s ease,
-    background 0.18s ease;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
 }
 
 .profile-status-badge .status-dot {
@@ -508,7 +469,6 @@ h6 {
   box-shadow: 0 5px 12px rgba(46, 204, 113, 0.4);
 }
 
-/* Click pulse feedback */
 .profile-status-badge.status-pulse {
   animation: statusPulse 0.6s ease-out;
 }
@@ -544,18 +504,68 @@ h6 {
     font-size: 1.1rem;
     line-height: 1.4;
   }
-}
 
-/* Stack hero pills on mobile */
-@media (max-width: 767.98px) {
-  .hero-info-row,
-  .hero-stats-row {
-    flex-direction: column;
+  #hero .hero-specialization {
+    font-size: 1rem;
   }
 
-  .hero-tagline,
-  .hero-typed {
-    max-width: 100%;
+  .hero-info-row {
+    justify-content: center;
+  }
+
+  .hero-education-card {
+    text-align: left;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #hero .hero-title {
+    font-size: 1.9rem;
+  }
+
+  #hero .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  #hero .hero-specialization {
+    font-size: 0.9rem;
+  }
+
+  .hero-info-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-info-pill {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .hero-edu-degree {
+    font-size: 1rem;
+  }
+
+  .hero-edu-meta {
+    font-size: 0.85rem;
+  }
+
+  .hero-edu-icon {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #hero .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .hero-info-pill {
+    font-size: 0.78rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .hero-education-card {
+    padding: 14px 14px;
   }
 }
 
@@ -608,8 +618,18 @@ section {
   margin-bottom: 0;
 }
 
+@media (max-width: 575.98px) {
+  section {
+    padding: 40px 0;
+  }
+
+  .section-title h2 {
+    font-size: 24px;
+  }
+}
+
 /*--------------------------------------------------------------
-# GitHub Notice Bar (at bottom of page)
+# GitHub Notice Bar
 --------------------------------------------------------------*/
 .github-notice {
   background: #111827;
@@ -621,10 +641,6 @@ section {
 .github-notice-text i {
   font-size: 0.95rem;
 }
-
-/*--------------------------------------------------------------
-About Page
---------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
@@ -632,15 +648,6 @@ About Page
   background: #f7f8fa;
 }
 
-.about-tagline {
-  max-width: 820px;
-  margin: 0 auto;
-  font-size: 1.02rem;
-  color: #6c757d;
-  font-weight: 500;
-}
-
-/* Intro text cards */
 .about-intro .about-text-card {
   background: #ffffff;
   border-radius: 10px;
@@ -659,7 +666,6 @@ About Page
   margin-bottom: 0.65rem;
 }
 
-/* Key Technical Pillars box */
 .about-pillar-title {
   font-size: 1.15rem;
   font-weight: 700;
@@ -685,7 +691,7 @@ About Page
 }
 
 .about-pillar-list li:before {
-  content: "▸";
+  content: "\25B8";
   position: absolute;
   left: 0;
   top: 0;
@@ -696,15 +702,6 @@ About Page
 
 .about-pillar-list li strong {
   color: #0f172a;
-}
-
-/* Hobbies text */
-.about-hobbies {
-  font-style: italic;
-  font-size: 1.02rem;
-  max-width: 760px;
-  margin: 0 auto;
-  color: #495057;
 }
 
 /* Profile card */
@@ -774,17 +771,24 @@ About Page
   border-color: #0d7ab0;
 }
 
-/* Small devices tweaks */
 @media (max-width: 767.98px) {
   .about-profile .profile-card {
     margin-bottom: 1.5rem;
   }
 
-  .about-hobbies {
-    font-size: 0.98rem;
+  .about-profile .profile-card img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-intro .about-text-card {
+    padding: 16px 16px;
+  }
+
+  .about-pillar-list li {
+    font-size: 0.85rem;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Skills & Expertise (pill style)
@@ -796,7 +800,6 @@ About Page
   color: #6c757d;
 }
 
-/* Reusable hover-lift */
 .hover-lift {
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
@@ -806,14 +809,12 @@ About Page
   box-shadow: 0 22px 48px rgba(15, 23, 42, 0.18);
 }
 
-/* Skill card container */
 .skill-pill-card {
   background: #ffffff;
   border-radius: 18px;
   border-left: 5px solid rgba(13, 110, 253, 0.1);
 }
 
-/* Icon wrapper */
 .skill-pill-icon {
   display: inline-flex;
   align-items: center;
@@ -825,7 +826,6 @@ About Page
   box-shadow: 0 10px 24px rgba(13, 110, 253, 0.25);
 }
 
-/* Sub-group labels inside cards */
 .skill-detail-group {
   margin-bottom: 12px;
 }
@@ -843,7 +843,6 @@ About Page
   background: rgba(15, 23, 42, 0.04);
 }
 
-/* Pills for tools */
 .skill-pill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -858,11 +857,7 @@ About Page
   padding: 5px 12px;
   border-radius: 999px;
   cursor: pointer;
-  transition:
-    background 0.16s ease,
-    color 0.16s ease,
-    box-shadow 0.16s ease,
-    transform 0.16s ease;
+  transition: background 0.16s ease, color 0.16s ease, box-shadow 0.16s ease, transform 0.16s ease;
 }
 
 .skill-pill:hover {
@@ -872,7 +867,6 @@ About Page
   transform: translateY(-1px);
 }
 
-/* Subtle glow inside cards */
 .skill-pill-glow {
   position: absolute;
   inset: 0;
@@ -886,15 +880,6 @@ About Page
   opacity: 1;
 }
 
-/* Responsive spacing */
-@media (max-width: 767.98px) {
-  .skill-pill-card {
-    border-radius: 16px;
-    padding: 1.25rem 1.1rem !important;
-  }
-}
-
-/* Small pulse class (used on click) */
 .skill-pill.pill-pulse {
   animation: pillPulse 0.35s ease-out;
 }
@@ -905,8 +890,26 @@ About Page
   100% { transform: scale(1); }
 }
 
+@media (max-width: 767.98px) {
+  .skill-pill-card {
+    border-radius: 16px;
+    padding: 1.25rem 1.1rem !important;
+  }
 
+  .skill-pill-card h4 {
+    font-size: 1rem;
+  }
 
+  .skill-pill {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+  }
+
+  .skill-pill-icon {
+    width: 42px;
+    height: 42px;
+  }
+}
 
 /*--------------------------------------------------------------
 # Experience Section
@@ -922,7 +925,6 @@ About Page
   color: #64748b;
 }
 
-/* ── Timeline layout ── */
 .exp-timeline {
   position: relative;
   padding-left: 40px;
@@ -938,7 +940,6 @@ About Page
   padding-bottom: 0;
 }
 
-/* Dot */
 .exp-timeline-dot {
   position: absolute;
   left: 0;
@@ -958,7 +959,6 @@ About Page
   box-shadow: 0 0 0 8px rgba(14, 165, 233, 0.25);
 }
 
-/* Line */
 .exp-timeline-line {
   position: absolute;
   left: 6px;
@@ -972,7 +972,6 @@ About Page
   display: none;
 }
 
-/* ── Card ── */
 .exp-timeline-card {
   background: #ffffff;
   border-radius: 16px;
@@ -990,7 +989,6 @@ About Page
   border-color: #bfdbfe;
 }
 
-/* ── Card header ── */
 .exp-timeline-header {
   display: flex;
   justify-content: space-between;
@@ -1017,7 +1015,6 @@ About Page
   flex-shrink: 0;
 }
 
-/* Icon circle */
 .exp-timeline-icon-wrap {
   width: 42px;
   height: 42px;
@@ -1039,7 +1036,6 @@ About Page
 .exp-icon-internship { background: linear-gradient(135deg, #14b8a6, #0f766e); }
 .exp-icon-program    { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
 
-/* Title & org */
 .exp-timeline-title {
   font-size: 1.05rem;
   font-weight: 700;
@@ -1058,7 +1054,6 @@ About Page
   font-size: 0.8rem;
 }
 
-/* Volunteer badge */
 .exp-volunteer-badge {
   display: inline-block;
   font-size: 0.68rem;
@@ -1073,7 +1068,6 @@ About Page
   vertical-align: middle;
 }
 
-/* Date & tag */
 .exp-timeline-date {
   font-size: 0.78rem;
   font-weight: 600;
@@ -1101,7 +1095,6 @@ About Page
 .exp-tag-internship { background: #ccfbf1; color: #0f766e; }
 .exp-tag-program    { background: #e5e7eb; color: #374151; }
 
-/* ── Card body ── */
 .exp-timeline-body {
   padding: 16px 22px 18px;
 }
@@ -1117,7 +1110,6 @@ About Page
   border-radius: 0 8px 8px 0;
 }
 
-/* Bullet list */
 .exp-timeline-list {
   padding-left: 1.1rem;
   margin: 0;
@@ -1143,7 +1135,6 @@ About Page
   color: #0f172a;
 }
 
-/* ── Responsive ── */
 @media (max-width: 767.98px) {
   .exp-timeline {
     padding-left: 28px;
@@ -1183,15 +1174,25 @@ About Page
     min-width: 36px;
     font-size: 1rem;
   }
+
+  .exp-timeline {
+    padding-left: 22px;
+  }
+
+  .exp-timeline-card {
+    margin-left: 12px;
+  }
+
+  .exp-timeline-date {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .exp-timeline-tag {
+    font-size: 0.62rem;
+    padding: 3px 8px;
+  }
 }
-
-
-
-
-
-
-
-
 
 /*--------------------------------------------------------------
 # Projects Section
@@ -1214,7 +1215,6 @@ About Page
   margin-top: 10px;
 }
 
-/* ── Card shell ── */
 .proj-card {
   border-radius: 18px;
   overflow: hidden;
@@ -1235,7 +1235,6 @@ About Page
   align-items: stretch;
 }
 
-/* ── Preview image ── */
 .proj-preview {
   flex: 0 0 240px;
   max-width: 240px;
@@ -1279,7 +1278,6 @@ About Page
   backdrop-filter: blur(4px);
 }
 
-/* ── Info side ── */
 .proj-info {
   flex: 1;
   padding: 20px 24px;
@@ -1288,7 +1286,6 @@ About Page
   min-width: 0;
 }
 
-/* Title */
 .proj-title {
   font-size: 1.12rem;
   font-weight: 800;
@@ -1298,7 +1295,6 @@ About Page
   letter-spacing: -0.2px;
 }
 
-/* ── Tab buttons ── */
 .proj-btn-row {
   display: flex;
   flex-wrap: wrap;
@@ -1336,7 +1332,6 @@ About Page
   box-shadow: 0 4px 12px rgba(5, 99, 187, 0.3);
 }
 
-/* Poster / Maps button — amber accent */
 .proj-btn-poster {
   background: #fef3c7;
   color: #b45309;
@@ -1352,7 +1347,6 @@ About Page
   color: #ffffff;
 }
 
-/* Web App / external link button — green accent */
 .proj-btn-webapp {
   background: #dcfce7;
   color: #15803d;
@@ -1369,7 +1363,6 @@ About Page
   font-size: 0.72rem;
 }
 
-/* ── Panels ── */
 .proj-panels {
   flex: 1;
   position: relative;
@@ -1433,7 +1426,6 @@ About Page
   color: #1e40af;
 }
 
-/* ── Tools grid ── */
 .proj-tools-grid {
   display: flex;
   flex-wrap: wrap;
@@ -1460,7 +1452,7 @@ About Page
   box-shadow: 0 4px 12px rgba(5, 99, 187, 0.3);
 }
 
-/* ── Poster lightbox overlay ── */
+/* Poster lightbox overlay */
 .proj-poster-overlay {
   position: fixed;
   inset: 0;
@@ -1517,7 +1509,20 @@ About Page
   transform: scale(1.1);
 }
 
-/* ── Responsive ── */
+/* Project card highlight (from Hero Details button) */
+.proj-card-highlight {
+  animation: projHighlightPulse 0.5s ease 3;
+  border-color: #22c55e !important;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25),
+              0 20px 50px rgba(15, 23, 42, 0.12) !important;
+}
+
+@keyframes projHighlightPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15), 0 20px 50px rgba(15, 23, 42, 0.12); }
+  50%      { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.35), 0 20px 50px rgba(15, 23, 42, 0.12); }
+}
+
+/* Projects responsive */
 @media (max-width: 767.98px) {
   .proj-card-inner {
     flex-direction: column;
@@ -1551,6 +1556,10 @@ About Page
     font-size: 0.75rem;
     padding: 4px 10px;
   }
+
+  .proj-grid {
+    gap: 20px;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -1568,38 +1577,27 @@ About Page
   }
 }
 
+@media (max-width: 575.98px) {
+  .proj-preview {
+    height: 150px;
+  }
 
+  .proj-btn {
+    font-size: 0.68rem;
+    padding: 4px 8px;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .proj-btn-row {
+    gap: 4px;
+  }
+}
 /*--------------------------------------------------------------
-# Conference & Participation Section (v2)
+# Conference & Participation Section
 --------------------------------------------------------------*/
 .conference.section-bg {
   background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
 }
 
-.conf-tagline {
-  max-width: 740px;
-  margin: 0 auto;
-  font-size: 0.96rem;
-  color: #64748b;
-}
-
-/* Stats row */
 .conf-stats-row {
   display: flex;
   justify-content: center;
@@ -1629,7 +1627,6 @@ About Page
   font-size: 0.85rem;
 }
 
-/* ── Card ── */
 .conf-card-v2 {
   background: #ffffff;
   border-radius: 18px;
@@ -1649,7 +1646,6 @@ About Page
   border-color: #bfdbfe;
 }
 
-/* Left accent bar */
 .conf-card-v2::before {
   content: "";
   position: absolute;
@@ -1673,7 +1669,6 @@ About Page
   background: linear-gradient(180deg, #f97316, #ea580c);
 }
 
-/* ── Image strip ── */
 .conf-image-strip-v2 {
   display: flex;
   width: 100%;
@@ -1696,7 +1691,6 @@ About Page
   transform: scale(1.05);
 }
 
-/* ── Body ── */
 .conf-body-v2 {
   padding: 16px 18px 18px;
   flex: 1;
@@ -1723,7 +1717,6 @@ About Page
   color: #94a3b8;
 }
 
-/* ── Badges ── */
 .conf-badge-v2 {
   padding: 3px 10px;
   border-radius: 999px;
@@ -1751,7 +1744,6 @@ About Page
   color: #ffffff;
 }
 
-/* ── Toggle button ── */
 .conf-toggle-btn {
   border: none;
   background: #f1f5f9;
@@ -1788,7 +1780,6 @@ About Page
   transition: transform 0.3s ease;
 }
 
-/* ── Collapse body ── */
 .conf-collapse-body {
   margin-top: 10px;
   padding: 10px 12px;
@@ -1804,7 +1795,6 @@ About Page
   font-style: italic;
 }
 
-/* ── Responsive ── */
 @media (max-width: 767.98px) {
   .conf-image-strip-v2 {
     height: 110px;
@@ -1828,16 +1818,28 @@ About Page
   }
 }
 
+@media (max-width: 575.98px) {
+  .conf-image-strip-v2 {
+    height: 90px;
+  }
 
+  .conf-name-v2 {
+    font-size: 0.85rem;
+  }
 
+  .conf-badge-v2 {
+    font-size: 0.6rem;
+    padding: 2px 8px;
+  }
 
-
-
-
-
+  .conf-toggle-btn {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+}
 
 /*--------------------------------------------------------------
-# Training & Certification (v2)
+# Training & Certification
 --------------------------------------------------------------*/
 .training-v2.section-bg {
   background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
@@ -1850,7 +1852,6 @@ About Page
   color: #64748b;
 }
 
-/* Card */
 .train-card {
   background: #ffffff;
   border-radius: 14px;
@@ -1871,7 +1872,6 @@ About Page
   border-color: #bfdbfe;
 }
 
-/* Left accent */
 .train-card-accent {
   position: absolute;
   left: 0;
@@ -1887,7 +1887,6 @@ About Page
 .train-accent-mapping   { background: linear-gradient(180deg, #14b8a6, #0f766e); }
 .train-accent-climate   { background: linear-gradient(180deg, #f59e0b, #d97706); }
 
-/* Header */
 .train-header {
   display: flex;
   align-items: flex-start;
@@ -1943,7 +1942,6 @@ About Page
   align-self: flex-start;
 }
 
-/* Body */
 .train-body {
   flex: 1;
 }
@@ -1955,7 +1953,6 @@ About Page
   margin-bottom: 10px;
 }
 
-/* Footer tag */
 .train-footer {
   margin-top: auto;
 }
@@ -1977,7 +1974,6 @@ About Page
 .train-tag-mapping   { background: linear-gradient(135deg, #14b8a6, #0f766e); }
 .train-tag-climate   { background: linear-gradient(135deg, #f59e0b, #d97706); }
 
-/* Responsive */
 @media (max-width: 767.98px) {
   .train-card {
     padding: 16px 14px 12px 18px;
@@ -1992,24 +1988,23 @@ About Page
     height: 36px;
     font-size: 1rem;
   }
+
+  .train-org {
+    font-size: 0.75rem;
+  }
+
+  .train-desc {
+    font-size: 0.8rem;
+  }
 }
 
 /*--------------------------------------------------------------
-# Honors & Awards (v2)
+# Honors & Awards
 --------------------------------------------------------------*/
 .awards-v2.section-bg {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-.awards-tagline {
-  max-width: 680px;
-  margin: 0 auto;
-  font-size: 0.96rem;
-  color: #64748b;
-  font-style: italic;
-}
-
-/* Card */
 .award-card-v2 {
   background: #ffffff;
   border-radius: 14px;
@@ -2031,7 +2026,6 @@ About Page
   border-color: #bfdbfe;
 }
 
-/* Shimmer on hover */
 .award-card-v2::after {
   content: "";
   position: absolute;
@@ -2053,7 +2047,6 @@ About Page
   to   { left: 120%; }
 }
 
-/* Rank icon */
 .award-rank {
   flex-shrink: 0;
   width: 48px;
@@ -2073,7 +2066,6 @@ About Page
 .award-rank-red    { background: linear-gradient(135deg, #ef4444, #dc2626); box-shadow: 0 6px 18px rgba(239, 68, 68, 0.35); }
 .award-rank-green  { background: linear-gradient(135deg, #22c55e, #16a34a); box-shadow: 0 6px 18px rgba(34, 197, 94, 0.35); }
 
-/* Content */
 .award-content {
   flex: 1;
   min-width: 0;
@@ -2094,7 +2086,6 @@ About Page
   margin-bottom: 8px;
 }
 
-/* Year badge */
 .award-year-badge {
   display: inline-block;
   font-size: 0.72rem;
@@ -2112,7 +2103,6 @@ About Page
 .award-year-red    { background: linear-gradient(135deg, #ef4444, #dc2626); }
 .award-year-green  { background: linear-gradient(135deg, #22c55e, #16a34a); }
 
-/* Responsive */
 @media (max-width: 767.98px) {
   .award-card-v2 {
     padding: 16px 16px;
@@ -2133,16 +2123,8 @@ About Page
   }
 }
 
-
-
-
-
-
-
-
-
 /*--------------------------------------------------------------
-# Affiliations & Service (v2)
+# Affiliations & Service
 --------------------------------------------------------------*/
 .affiliations-v2.section-bg {
   background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
@@ -2155,7 +2137,22 @@ About Page
   color: #64748b;
 }
 
-/* Card */
+.affil-sub-heading {
+  font-size: 1.0rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e8f0;
+  display: inline-flex;
+  align-items: center;
+}
+
+.affil-sub-heading i {
+  color: #0563bb;
+  font-size: 1.05rem;
+}
+
 .affil-card {
   background: #ffffff;
   border-radius: 14px;
@@ -2175,7 +2172,6 @@ About Page
   border-color: #bfdbfe;
 }
 
-/* Icon */
 .affil-icon-wrap {
   flex-shrink: 0;
   width: 44px;
@@ -2194,8 +2190,9 @@ About Page
 .affil-icon-guild { background: linear-gradient(135deg, #f59e0b, #d97706); }
 .affil-icon-cssgs { background: linear-gradient(135deg, #ec4899, #db2777); }
 .affil-icon-gesan { background: linear-gradient(135deg, #14b8a6, #0f766e); }
+.affil-icon-service-mod { background: linear-gradient(135deg, #f59e0b, #d97706); }
+.affil-icon-service-rep { background: linear-gradient(135deg, #ec4899, #db2777); }
 
-/* Content */
 .affil-content {
   flex: 1;
   min-width: 0;
@@ -2230,7 +2227,6 @@ About Page
   font-size: 0.65rem;
 }
 
-/* Responsive */
 @media (max-width: 767.98px) {
   .affil-card {
     padding: 16px 16px;
@@ -2247,9 +2243,8 @@ About Page
   }
 }
 
-
 /*--------------------------------------------------------------
-# Contact Section (v2)
+# Contact Section
 --------------------------------------------------------------*/
 .contact-v2 {
   padding: 60px 0;
@@ -2263,7 +2258,6 @@ About Page
   color: #64748b;
 }
 
-/* Info box — LIGHT THEME */
 .contact-info-box {
   background: #ffffff;
   border-radius: 18px;
@@ -2272,6 +2266,17 @@ About Page
   height: 100%;
   border: 1px solid #e2e8f0;
   box-shadow: 0 8px 28px rgba(15, 23, 42, 0.06);
+}
+
+.contact-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.contact-info-item:last-of-type {
+  margin-bottom: 12px;
 }
 
 .contact-info-icon {
@@ -2303,7 +2308,6 @@ About Page
   word-break: break-word;
 }
 
-/* Social links — light theme */
 .contact-social {
   display: flex;
   gap: 10px;
@@ -2330,34 +2334,6 @@ About Page
   transform: translateY(-2px);
 }
 
-/* Social links */
-.contact-social {
-  display: flex;
-  gap: 10px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(148, 163, 184, 0.2);
-}
-
-.contact-social a {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  color: #94a3b8;
-  transition: all 0.2s ease;
-}
-
-.contact-social a:hover {
-  background: #0ea5e9;
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* Form */
 .contact-form-v2 {
   background: #f8fafc;
   border-radius: 18px;
@@ -2382,7 +2358,6 @@ About Page
   min-height: 120px;
 }
 
-/* Send button */
 .contact-send-btn {
   width: 100%;
   border: none;
@@ -2415,7 +2390,6 @@ About Page
   pointer-events: none;
 }
 
-/* Status messages */
 .contact-status {
   text-align: center;
   font-size: 0.9rem;
@@ -2437,7 +2411,6 @@ About Page
   padding: 10px 16px;
 }
 
-/* Responsive */
 @media (max-width: 767.98px) {
   .contact-form-v2 {
     padding: 20px 18px;
@@ -2447,7 +2420,6 @@ About Page
     padding: 22px 20px;
   }
 }
-
 
 /*--------------------------------------------------------------
 # Quote Footer
@@ -2482,12 +2454,18 @@ About Page
   font-weight: 600;
 }
 
+@media (max-width: 575.98px) {
+  .quote-footer {
+    padding: 28px 16px;
+  }
 
-
-
+  .quote-text {
+    font-size: 1rem;
+  }
+}
 
 /*--------------------------------------------------------------
-# Hero Showcase Box (ArborGRID) — COMPLETE
+# Hero Showcase Box (ArborGRID)
 --------------------------------------------------------------*/
 .hero-showcase {
   position: absolute;
@@ -2498,14 +2476,12 @@ About Page
   z-index: 10;
 }
 
-/* Border container */
 .hero-showcase-border {
   position: relative;
   width: 100%;
   height: 340px;
 }
 
-/* SVG border that draws itself */
 .hero-showcase-svg {
   position: absolute;
   inset: 0;
@@ -2520,7 +2496,6 @@ About Page
   stroke-dashoffset: 1314;
 }
 
-/* Draw animation — triggered by JS class */
 .hero-showcase-svg.drawing .hero-showcase-rect {
   animation: svgDraw 1.8s ease forwards;
 }
@@ -2529,7 +2504,6 @@ About Page
   to { stroke-dashoffset: 0; }
 }
 
-/* Glow pulse after drawn */
 .hero-showcase-svg.drawn .hero-showcase-rect {
   stroke-dashoffset: 0;
   animation: svgGlowPulse 2.5s ease-in-out infinite;
@@ -2540,7 +2514,6 @@ About Page
   50%      { stroke: #4ade80; filter: drop-shadow(0 0 14px rgba(34, 197, 94, 0.6)); }
 }
 
-/* Inner content — hidden until border drawn */
 .hero-showcase-inner {
   position: absolute;
   inset: 6px;
@@ -2561,7 +2534,6 @@ About Page
   transform: scale(1);
 }
 
-/* Image slideshow */
 .hero-showcase-img-wrap {
   position: relative;
   width: 100%;
@@ -2588,7 +2560,6 @@ About Page
   opacity: 1;
 }
 
-/* Typewriter text */
 .hero-showcase-desc {
   font-size: 0.8rem;
   color: #cbd5e1;
@@ -2612,7 +2583,6 @@ About Page
   50% { opacity: 0; }
 }
 
-/* Buttons */
 .hero-showcase-btns {
   display: flex;
   gap: 8px;
@@ -2666,7 +2636,7 @@ About Page
   text-decoration: none;
 }
 
-/* ── Responsive ── */
+/* Hero Showcase responsive */
 @media (max-width: 1199.98px) {
   .hero-showcase {
     right: 20px;
@@ -2723,45 +2693,4 @@ About Page
   .hero-showcase-desc {
     font-size: 0.76rem;
   }
-}
-
-/*--------------------------------------------------------------
-# Project Card Highlight (from Hero Details button)
---------------------------------------------------------------*/
-.proj-card-highlight {
-  animation: projHighlightPulse 0.5s ease 3;
-  border-color: #22c55e !important;
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25),
-              0 20px 50px rgba(15, 23, 42, 0.12) !important;
-}
-
-@keyframes projHighlightPulse {
-  0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15), 0 20px 50px rgba(15, 23, 42, 0.12); }
-  50%      { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.35), 0 20px 50px rgba(15, 23, 42, 0.12); }
-}
-
-/* Sub-section headings */
-.affil-sub-heading {
-  font-size: 1.0rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 16px;
-  padding-bottom: 8px;
-  border-bottom: 2px solid #e2e8f0;
-  display: inline-flex;
-  align-items: center;
-}
-
-.affil-sub-heading i {
-  color: #0563bb;
-  font-size: 1.05rem;
-}
-
-/* Service icon colors */
-.affil-icon-service-mod {
-  background: linear-gradient(135deg, #f59e0b, #d97706);
-}
-
-.affil-icon-service-rep {
-  background: linear-gradient(135deg, #ec4899, #db2777);
 }
