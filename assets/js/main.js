@@ -256,55 +256,6 @@ ABOUT PAGE
    * SKILL SECTIOn
    * ------------------------------------------------------------------ */
 
-  /* ------------------------------------------------------------------
-   * Tilt effect for [data-tilt] elements
-   * ------------------------------------------------------------------ */
-  document.addEventListener("DOMContentLoaded", () => {
-    document.querySelectorAll("[data-tilt]").forEach(el => {
-      const height = el.clientHeight;
-      const width = el.clientWidth;
-
-      el.addEventListener("mousemove", (event) => {
-        const xVal = event.layerX;
-        const yVal = event.layerY;
-
-        const yRotation = 8 * ((xVal - width / 2) / width);
-        const xRotation = -8 * ((yVal - height / 2) / height);
-
-        el.style.transform =
-          `perspective(600px) rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
-      });
-
-      el.addEventListener("mouseleave", () => {
-        el.style.transform = "perspective(600px) rotateX(0deg) rotateY(0deg)";
-      });
-
-      el.addEventListener("mouseenter", () => {
-        el.style.transition = "transform 0.18s ease-out";
-        setTimeout(() => {
-          el.style.transition = "none";
-        }, 200);
-      });
-    });
-  });
-
-  /* ------------------------------------------------------------------
-   * Collaboration badge pulse (second badge in About section)
-   * ------------------------------------------------------------------ */
-  document.addEventListener("DOMContentLoaded", () => {
-    const collabBadge2 = document.getElementById("collabBadge2");
-    if (collabBadge2) {
-      collabBadge2.addEventListener("click", () => {
-        collabBadge2.classList.add("status-pulse");
-        setTimeout(() => {
-          collabBadge2.classList.remove("status-pulse");
-        }, 600);
-      });
-    }
-  });
-
-
-
 
 
     /* ------------------------------------------------------------------
